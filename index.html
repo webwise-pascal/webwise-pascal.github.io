@@ -14,7 +14,10 @@ body {
   scroll-behavior: smooth;
   background: #f8f9fc;
   color: #1a1a1a;
+  overflow-x: hidden;
 }
+
+/* Navbar */
 .navbar {
   background: linear-gradient(to right, #0072ff, #9b00ff);
 }
@@ -22,6 +25,8 @@ body {
   color: white !important;
   font-weight: 600;
 }
+
+/* Hero */
 .hero {
   background: linear-gradient(to right, #0072ff, #9b00ff);
   color: white;
@@ -36,9 +41,20 @@ body {
   font-size: 1.2rem;
   opacity: 0.9;
 }
+
+/* Sections */
 section {
   padding: 80px 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
 }
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Titles */
 .section-title {
   font-weight: 700;
   font-size: 2rem;
@@ -48,6 +64,8 @@ section {
   text-align: center;
   margin-bottom: 40px;
 }
+
+/* Cards */
 .card {
   border: none;
   border-radius: 15px;
@@ -58,6 +76,8 @@ section {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
+
+/* Footer */
 footer {
   background: linear-gradient(to right, #0072ff, #9b00ff);
   color: white;
@@ -71,6 +91,51 @@ iframe {
   border-radius: 12px;
   height: 1200px;
 }
+
+/* ✨ Shimmering Glimmer Gradient Effect ✨ */
+@keyframes shimmer {
+  0% { background-position: -200%; }
+  100% { background-position: 200%; }
+}
+
+.glimmer {
+  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff, #9b00ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 1.5s linear infinite;
+}
+
+.hover-glimmer:hover,
+.hover-glimmer:active {
+  animation: shimmer 1.5s linear infinite;
+  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff, #9b00ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: brightness(1.2);
+}
+
+/* Apply hover shimmer to everything readable */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+p:hover, strong:hover, a:hover, div:hover, section:hover {
+  animation: shimmer 1.5s linear infinite;
+  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff, #9b00ff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fade-in delay per element */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 </head>
 <body>
@@ -78,33 +143,34 @@ iframe {
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">WebWise</a>
+    <a class="navbar-brand hover-glimmer" href="#">WebWise</a>
     <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#definition">Definition</a></li>
-        <li class="nav-item"><a class="nav-link" href="#application">Applications</a></li>
-        <li class="nav-item"><a class="nav-link" href="#competencies">Competencies</a></li>
-        <li class="nav-item"><a class="nav-link" href="#form">Survey</a></li>
+        <li class="nav-item"><a class="nav-link hover-glimmer" href="#definition">Definition</a></li>
+        <li class="nav-item"><a class="nav-link hover-glimmer" href="#application">Applications</a></li>
+        <li class="nav-item"><a class="nav-link hover-glimmer" href="#competencies">Competencies</a></li>
+        <li class="nav-item"><a class="nav-link hover-glimmer" href="#form">Survey</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="hero">
-  <h1>WebWise: Be Smart. Be Aware. Be Literate.</h1>
-  <p>Empowering critical thinkers in the digital age through Media and Information Literacy.</p>
+<!-- Hero -->
+<div class="hero fade-up">
+  <h1>WebWise: Always critically clicking, facts-wise</h1>
+  <p>Empowering critical thinkers and clickers in the digital age through Media and Information Literacy.</p>
 </div>
 
-<!-- Definition Section -->
-<section id="definition" class="container">
+<!-- Definition -->
+<section id="definition" class="fade-up">
   <h2 class="section-title">What is Media and Information Literacy?</h2>
   <div class="row g-4">
     <div class="col-md-6">
-      <img src="https://images.unsplash.com/photo-1526378722323-3d9bd03c6c59?auto=format&fit=crop&w=900&q=80" class="img-fluid rounded shadow" alt="Media Literacy">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSre42Ir7ZQXkHUyy06cEks1DHF4yEYkKbxVdMOKDjvqDgSByV470inhZ6MumXrrL2P46dbKFV71ywExODt_c8Ja92bQlAgmh8bCACXqL0&s=10"
+           class="img-fluid rounded shadow hover-glimmer" alt="Media Literacy">
     </div>
     <div class="col-md-6">
       <p><strong>Media Literacy</strong> is the ability to access, analyze, evaluate, and create media in various forms. It empowers people to understand the role of media in society and use it critically and responsibly.</p>
@@ -114,14 +180,15 @@ iframe {
   </div>
 </section>
 
-<!-- Application Section -->
-<section id="application" style="background:#ffffff;">
+<!-- Application -->
+<section id="application" class="fade-up" style="background:#ffffff;">
   <div class="container">
     <h2 class="section-title">Applications of MIL</h2>
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card p-3 text-center">
-          <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80" class="card-img-top rounded" alt="Digital Divide">
+        <div class="card p-3 text-center hover-glimmer">
+          <img src="https://wp.technologyreview.com/wp-content/uploads/2016/12/digitaldividetopper-10.png"
+               class="card-img-top rounded" alt="Digital Divide">
           <div class="card-body">
             <h5 class="fw-bold">Digital Divide</h5>
             <p>Media and Information Literacy narrows the gap in access and usage of technology by teaching responsible, critical use of digital tools.</p>
@@ -129,8 +196,9 @@ iframe {
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-3 text-center">
-          <img src="https://images.unsplash.com/photo-1603575448368-923b44baf39e?auto=format&fit=crop&w=800&q=80" class="card-img-top rounded" alt="Misinformation">
+        <div class="card p-3 text-center hover-glimmer">
+          <img src="https://futurumcareers.com/wp-content/uploads/2025/04/Shutterstock_2550216469-1024x597.jpg"
+               class="card-img-top rounded" alt="Misinformation">
           <div class="card-body">
             <h5 class="fw-bold">Misinformation & Disinformation</h5>
             <p>MIL develops critical thinking to identify, verify, and counter false content, protecting users from manipulation online.</p>
@@ -138,8 +206,9 @@ iframe {
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-3 text-center">
-          <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80" class="card-img-top rounded" alt="Unbiased Media">
+        <div class="card p-3 text-center hover-glimmer">
+          <img src="https://media.licdn.com/dms/image/v2/C4E1BAQEykCzxZhcVoQ/company-background_10000/company-background_10000/0/1637228005405/tub_the_unbiased_media_pvt_ltd_cover?e=2147483647&v=beta&t=rFkuIYE_leewlMtcV4hEc7Nw18DHgQdYtB-VUHe6kbk"
+               class="card-img-top rounded" alt="Unbiased Media">
           <div class="card-body">
             <h5 class="fw-bold">Access to Unbiased Media</h5>
             <p>MIL promotes equal access to truthful, objective information—encouraging transparency and informed citizenship.</p>
@@ -150,54 +219,46 @@ iframe {
   </div>
 </section>
 
-<!-- Competencies Section -->
-<section id="competencies" class="container">
+<!-- Competencies -->
+<section id="competencies" class="fade-up container">
   <h2 class="section-title">Five Core Competencies of MIL</h2>
   <div class="row g-4">
-    <div class="col-md-6 col-lg-4">
-      <div class="card p-3 text-center">
-        <h5 class="fw-bold">Access</h5>
-        <p>Find and retrieve reliable information from credible sources.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="card p-3 text-center">
-        <h5 class="fw-bold">Analyze</h5>
-        <p>Evaluate content for accuracy, credibility, and bias.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="card p-3 text-center">
-        <h5 class="fw-bold">Create</h5>
-        <p>Develop responsible and meaningful media content.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="card p-3 text-center">
-        <h5 class="fw-bold">Reflect</h5>
-        <p>Understand how media influences society and personal views.</p>
-      </div>
-    </div>
-    <div class="col-md-6 col-lg-4">
-      <div class="card p-3 text-center">
-        <h5 class="fw-bold">Act</h5>
-        <p>Use media responsibly to promote awareness and positive change.</p>
-      </div>
-    </div>
+    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Access</h5><p>Find and retrieve reliable information from credible sources.</p></div></div>
+    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Analyze</h5><p>Evaluate content for accuracy, credibility, and bias.</p></div></div>
+    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Create</h5><p>Develop responsible and meaningful media content.</p></div></div>
+    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Reflect</h5><p>Understand how media influences society and personal views.</p></div></div>
+    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Act</h5><p>Use media responsibly to promote awareness and positive change.</p></div></div>
   </div>
 </section>
 
 <!-- Google Form -->
-<section id="form" class="container">
+<section id="form" class="fade-up container">
   <h2 class="section-title">Participate in Our Awareness Survey</h2>
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd1IDma3TQQTbEPi-hL5rhhChkDSht5RNX9XCGbtam4tK2uDA/viewform?embedded=true">Loading…</iframe>
 </section>
 
 <!-- Footer -->
-<footer>
-  <p>© 2025 WebWise | Media and Information Literacy Awareness Group</p>
+<footer class="hover-glimmer">
+  <p>© 2025 WebWise | Media and Information Literacy Group | Group 2 - 11-Pascal</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Scroll-trigger fade-in -->
+<script>
+const fadeElems = document.querySelectorAll('.fade-up, section');
+
+function showOnScroll() {
+  fadeElems.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', showOnScroll);
+window.addEventListener('load', showOnScroll);
+</script>
+
 </body>
 </html>
