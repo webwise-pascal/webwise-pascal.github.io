@@ -17,11 +17,10 @@ html, body {
 body {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  background: #f8f9fc;
-  color: #1a1a1a;
-  overflow-x: hidden;
   background: url('https://iite.unesco.org/wp-content/uploads/2019/10/MIL-wordcloud-2.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: white;
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -62,9 +61,6 @@ body {
   transition: all 0.5s ease;
 }
 .hero h1:hover {
-  background: linear-gradient(to right, #99caff, #d8b3ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-shadow: 0 0 10px #99caff, 0 0 20px #d8b3ff, 0 0 30px #99caff;
 }
 
@@ -97,9 +93,7 @@ section.visible {
 .section-title {
   font-weight: 700;
   font-size: 2rem;
-  background: linear-gradient(to right, #0072ff, #9b00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -128,7 +122,8 @@ section.visible {
 /* Paragraph Card */
 .text-card {
   padding: 25px 30px;
-  background: white;
+  background: rgba(255,255,255,0.9);
+  color: #1a1a1a;
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -145,9 +140,7 @@ section.visible {
 .competency-title {
   font-weight: 700;
   font-size: 1.25rem;
-  background: linear-gradient(to right, #0072ff, #9b00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   margin-top: 10px;
 }
 
@@ -235,9 +228,9 @@ iframe {
 </section>
 
 <!-- Application -->
-<section id="application" class="fade-up" style="background:#ffffff;">
+<section id="application" class="fade-up" style="background:rgba(255,255,255,0.9); color:#1a1a1a;">
   <div class="container">
-    <h2 class="section-title">Applications of MIL</h2>
+    <h2 class="section-title" style="color:white;">Applications of MIL</h2>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card p-3 text-center hover-glimmer">
@@ -327,7 +320,7 @@ iframe {
 
 <!-- Google Form -->
 <section id="form" class="fade-up container">
-  <h2 class="hero">Participate in Our Awareness Survey</h2>
+  <h2 class="section-title">Participate in Our Awareness Survey</h2>
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd1IDma3TQQTbEPi-hL5rhhChkDSht5RNX9XCGbtam4tK2uDA/viewform?embedded=true">Loading…</iframe>
 </section>
 
