@@ -32,7 +32,7 @@ body {
 
 /* Hero */
 .hero {
-  background: url('https://assets.sutori.com/user-uploads/image/908bbeba-eb4d-4df5-b56d-180aa921a6c6/c5968ddd1d68cb7f88d578f1e2c38f34.jpeg') center/cover no-repeat;
+  background: url('https://i0.wp.com/ic4ml.org/wp-content/uploads/2023/11/media-and-information-literacy-word-map.jpg?fit=800%2C449&ssl=1') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 120px 20px;
@@ -106,6 +106,7 @@ section.visible {
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -115,9 +116,22 @@ section.visible {
 /* Images fit properly */
 .card-img-top, img {
   width: 100%;
-  height: auto;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+/* Paragraph Card */
+.text-card {
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.text-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 /* Footer */
@@ -184,17 +198,21 @@ iframe {
 </div>
 
 <!-- Definition -->
-<section id="definition" class="fade-up">
+<section id="definition" class="fade-up container">
   <h2 class="section-title">What is Media and Information Literacy?</h2>
   <div class="row g-4">
     <div class="col-md-6">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSre42Ir7ZQXkHUyy06cEks1DHF4yEYkKbxVdMOKDjvqDgSByV470inhZ6MumXrrL2P46dbKFV71ywExODt_c8Ja92bQlAgmh8bCACXqL0&s=10"
-           class="img-fluid shadow hover-glimmer" alt="Media Literacy">
+      <div class="card hover-glimmer">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSre42Ir7ZQXkHUyy06cEks1DHF4yEYkKbxVdMOKDjvqDgSByV470inhZ6MumXrrL2P46dbKFV71ywExODt_c8Ja92bQlAgmh8bCACXqL0&s=10"
+             class="card-img-top" alt="Media Literacy">
+      </div>
     </div>
     <div class="col-md-6">
-      <p><strong>Media Literacy</strong> is the ability to access, analyze, evaluate, and create media in various forms. It empowers people to understand the role of media in society and use it critically and responsibly.</p>
-      <p><strong>Information Literacy</strong> is the ability to locate, evaluate, and effectively use information. It enables individuals to make informed decisions and share knowledge ethically.</p>
-      <p><strong>Media and Information Literacy (MIL)</strong> combines both, teaching us how to engage responsibly and thoughtfully with the digital world.</p>
+      <div class="text-card hover-glimmer">
+        <p><strong>Media Literacy</strong> is the ability to access, analyze, evaluate, and create media in various forms. It empowers people to understand the role of media in society and use it critically and responsibly.</p>
+        <p><strong>Information Literacy</strong> is the ability to locate, evaluate, and effectively use information. It enables individuals to make informed decisions and share knowledge ethically.</p>
+        <p><strong>Media and Information Literacy (MIL)</strong> combines both, teaching us how to engage responsibly and thoughtfully with the digital world.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -262,7 +280,6 @@ iframe {
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
 const fadeElems = document.querySelectorAll('.fade-up, section');
 function showOnScroll() {
