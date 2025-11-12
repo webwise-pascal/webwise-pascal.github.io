@@ -32,7 +32,7 @@ body {
 
 /* Hero */
 .hero {
-  background: url('https://i0.wp.com/ic4ml.org/wp-content/uploads/2023/11/media-and-information-literacy-word-map.jpg?fit=800%2C449&ssl=1') center/cover no-repeat;
+  background: url('https://www.eui.eu/Content-Types-Assets/Academic-Units/STG/STG-EDMO-Banner.xef029622.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 120px 20px;
@@ -51,17 +51,14 @@ body {
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
+  color: white;
+  transition: all 0.5s ease;
+}
+.hero h1:hover {
   background: linear-gradient(to right, #99caff, #d8b3ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: filter 0.3s ease;
-}
-.hero h1:hover {
-  filter: brightness(1.2);
-}
-.hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  text-shadow: 0 0 10px #99caff, 0 0 20px #d8b3ff, 0 0 30px #99caff;
 }
 
 /* Responsive hero */
@@ -116,7 +113,7 @@ section.visible {
 /* Images fit properly */
 .card-img-top, img {
   width: 100%;
-  max-height: 300px;
+  max-height: 200px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -135,6 +132,16 @@ section.visible {
 .text-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Competency card headings */
+.competency-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: linear-gradient(to right, #0072ff, #9b00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 10px;
 }
 
 /* Footer */
@@ -263,11 +270,51 @@ iframe {
 <section id="competencies" class="fade-up container">
   <h2 class="section-title">Five Core Competencies of MIL</h2>
   <div class="row g-4">
-    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Access</h5><p>Find and retrieve reliable information from credible sources.</p></div></div>
-    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Analyze</h5><p>Evaluate content for accuracy, credibility, and bias.</p></div></div>
-    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Create</h5><p>Develop responsible and meaningful media content.</p></div></div>
-    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Reflect</h5><p>Understand how media influences society and personal views.</p></div></div>
-    <div class="col-md-6 col-lg-4"><div class="card p-3 text-center hover-glimmer"><h5>Act</h5><p>Use media responsibly to promote awareness and positive change.</p></div></div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card hover-glimmer">
+        <img src="https://www.montclair.edu/responsive-media/cache/information-technology/wp-content/uploads/sites/168/2020/03/internet-emerge-econ_1200x675_hero_071317.jpg.3.2x.generic.jpg" class="card-img-top" alt="Access">
+        <div class="card-body text-center">
+          <h5 class="competency-title">Access</h5>
+          <p>Find and retrieve reliable information from credible sources.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card hover-glimmer">
+        <img src="https://img.freepik.com/premium-vector/analyze-concept-illustration_114360-6491.jpg" class="card-img-top" alt="Analyze">
+        <div class="card-body text-center">
+          <h5 class="competency-title">Analyze</h5>
+          <p>Evaluate content for accuracy, credibility, and bias.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card hover-glimmer">
+        <img src="https://cdn.iview.abc.net.au/thumbs/1200/ck/CK1870V_5b3327aa099a8.jpg" class="card-img-top" alt="Create">
+        <div class="card-body text-center">
+          <h5 class="competency-title">Create</h5>
+          <p>Develop responsible and meaningful media content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card hover-glimmer">
+        <img src="https://www.gettingsmart.com/wp-content/uploads/2017/10/bigstock-Thinking-45114187.jpg" class="card-img-top" alt="Reflect">
+        <div class="card-body text-center">
+          <h5 class="competency-title">Reflect</h5>
+          <p>Understand how media influences society and personal views.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div class="card hover-glimmer">
+        <img src="https://i0.wp.com/algorithmxlab.com/wp-content/uploads/2018/04/Training-Artificial-Intelligence-To-Act-Responsibly.jpg?fit=900%2C599&ssl=1" class="card-img-top" alt="Act">
+        <div class="card-body text-center">
+          <h5 class="competency-title">Act</h5>
+          <p>Use media responsibly to promote awareness and positive change.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
