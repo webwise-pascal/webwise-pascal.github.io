@@ -99,14 +99,15 @@ section.visible {
 }
 
 /* Cards */
-.card {
+.card, .text-card, .gradient-card {
+  background: white; /* Default white background for all cards */
   border: none;
   border-radius: 15px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
-.card:hover {
+.card:hover, .text-card:hover, .gradient-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
@@ -122,26 +123,16 @@ section.visible {
 /* Paragraph Card */
 .text-card {
   padding: 25px 30px;
-  background: rgba(255,255,255,0.9);
   color: #1a1a1a;
-  border-radius: 15px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.text-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 /* Gradient Text Card */
 .gradient-card {
   padding: 25px 30px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  color: #1a1a1a;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -161,7 +152,7 @@ section.visible {
 .competency-title {
   font-weight: 700;
   font-size: 1.25rem;
-  color: white;
+  color: #1a1a1a;
   margin-top: 10px;
 }
 
