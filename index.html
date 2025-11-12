@@ -77,6 +77,14 @@ section.visible {
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
+/* Images fit properly */
+.card-img-top, img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 /* Footer */
 footer {
   background: linear-gradient(to right, #0072ff, #9b00ff);
@@ -92,41 +100,28 @@ iframe {
   height: 1200px;
 }
 
-/* ✨ Shimmering Glimmer Gradient Effect ✨ */
-@keyframes shimmer {
+/* ✨ One-Time Shimmer Effect ✨ */
+@keyframes shimmerOnce {
   0% { background-position: -200%; }
   100% { background-position: 200%; }
 }
 
-.glimmer {
-  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff, #9b00ff);
+.hover-glimmer {
+  position: relative;
+  display: inline-block;
+  transition: filter 0.3s ease;
+}
+
+.hover-glimmer:hover {
+  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff);
   background-size: 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 1.5s linear infinite;
+  animation: shimmerOnce 1.2s linear 1;
+  filter: brightness(1.15);
 }
 
-.hover-glimmer:hover,
-.hover-glimmer:active {
-  animation: shimmer 1.5s linear infinite;
-  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff, #9b00ff);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: brightness(1.2);
-}
-
-/* Apply hover shimmer to everything readable */
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
-p:hover, strong:hover, a:hover, div:hover, section:hover {
-  animation: shimmer 1.5s linear infinite;
-  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff, #9b00ff);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Fade-in delay per element */
+/* Fade-in effect */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
@@ -160,7 +155,7 @@ p:hover, strong:hover, a:hover, div:hover, section:hover {
 
 <!-- Hero -->
 <div class="hero fade-up">
-  <h1>WebWise: Always critically clicking, facts-wise</h1>
+  <h1 class="hover-glimmer">WebWise: Always critically clicking, facts-wise</h1>
   <p>Empowering critical thinkers and clickers in the digital age through Media and Information Literacy.</p>
 </div>
 
@@ -170,12 +165,12 @@ p:hover, strong:hover, a:hover, div:hover, section:hover {
   <div class="row g-4">
     <div class="col-md-6">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSre42Ir7ZQXkHUyy06cEks1DHF4yEYkKbxVdMOKDjvqDgSByV470inhZ6MumXrrL2P46dbKFV71ywExODt_c8Ja92bQlAgmh8bCACXqL0&s=10"
-           class="img-fluid rounded shadow hover-glimmer" alt="Media Literacy">
+           class="img-fluid shadow hover-glimmer" alt="Media Literacy">
     </div>
     <div class="col-md-6">
       <p><strong>Media Literacy</strong> is the ability to access, analyze, evaluate, and create media in various forms. It empowers people to understand the role of media in society and use it critically and responsibly.</p>
       <p><strong>Information Literacy</strong> is the ability to locate, evaluate, and effectively use information. It enables individuals to make informed decisions and share knowledge ethically.</p>
-      <p><strong>Media and Information Literacy (MIL)</strong> combines both—teaching us how to engage responsibly and thoughtfully with the digital world.</p>
+      <p><strong>Media and Information Literacy (MIL)</strong> combines both, teaching us how to engage responsibly and thoughtfully with the digital world.</p>
     </div>
   </div>
 </section>
@@ -188,7 +183,7 @@ p:hover, strong:hover, a:hover, div:hover, section:hover {
       <div class="col-md-4">
         <div class="card p-3 text-center hover-glimmer">
           <img src="https://wp.technologyreview.com/wp-content/uploads/2016/12/digitaldividetopper-10.png"
-               class="card-img-top rounded" alt="Digital Divide">
+               class="card-img-top" alt="Digital Divide">
           <div class="card-body">
             <h5 class="fw-bold">Digital Divide</h5>
             <p>Media and Information Literacy narrows the gap in access and usage of technology by teaching responsible, critical use of digital tools.</p>
@@ -198,9 +193,9 @@ p:hover, strong:hover, a:hover, div:hover, section:hover {
       <div class="col-md-4">
         <div class="card p-3 text-center hover-glimmer">
           <img src="https://futurumcareers.com/wp-content/uploads/2025/04/Shutterstock_2550216469-1024x597.jpg"
-               class="card-img-top rounded" alt="Misinformation">
+               class="card-img-top" alt="Misinformation">
           <div class="card-body">
-            <h5 class="fw-bold">Misinformation & Disinformation</h5>
+            <h5 class="fw-bold">Misinformation and Disinformation</h5>
             <p>MIL develops critical thinking to identify, verify, and counter false content, protecting users from manipulation online.</p>
           </div>
         </div>
@@ -208,10 +203,10 @@ p:hover, strong:hover, a:hover, div:hover, section:hover {
       <div class="col-md-4">
         <div class="card p-3 text-center hover-glimmer">
           <img src="https://media.licdn.com/dms/image/v2/C4E1BAQEykCzxZhcVoQ/company-background_10000/company-background_10000/0/1637228005405/tub_the_unbiased_media_pvt_ltd_cover?e=2147483647&v=beta&t=rFkuIYE_leewlMtcV4hEc7Nw18DHgQdYtB-VUHe6kbk"
-               class="card-img-top rounded" alt="Unbiased Media">
+               class="card-img-top" alt="Unbiased Media">
           <div class="card-body">
             <h5 class="fw-bold">Access to Unbiased Media</h5>
-            <p>MIL promotes equal access to truthful, objective information—encouraging transparency and informed citizenship.</p>
+            <p>MIL promotes equal access to truthful, objective information, encouraging transparency and informed citizenship.</p>
           </div>
         </div>
       </div>
@@ -244,10 +239,8 @@ p:hover, strong:hover, a:hover, div:hover, section:hover {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Scroll-trigger fade-in -->
 <script>
 const fadeElems = document.querySelectorAll('.fade-up, section');
-
 function showOnScroll() {
   fadeElems.forEach(el => {
     const rect = el.getBoundingClientRect();
