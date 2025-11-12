@@ -24,22 +24,57 @@ body {
 .navbar-brand, .nav-link {
   color: white !important;
   font-weight: 600;
+  transition: filter 0.3s ease;
+}
+.navbar-brand:hover, .nav-link:hover {
+  filter: brightness(1.2);
 }
 
 /* Hero */
 .hero {
-  background: linear-gradient(to right, #0072ff, #9b00ff);
+  background: url('https://assets.sutori.com/user-uploads/image/908bbeba-eb4d-4df5-b56d-180aa921a6c6/c5968ddd1d68cb7f88d578f1e2c38f34.jpeg') center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 120px 20px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+.hero h1, .hero p {
+  position: relative;
+  z-index: 1;
 }
 .hero h1 {
   font-size: 3rem;
   font-weight: 700;
+  background: linear-gradient(to right, #99caff, #d8b3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: filter 0.3s ease;
+}
+.hero h1:hover {
+  filter: brightness(1.2);
 }
 .hero p {
   font-size: 1.2rem;
   opacity: 0.9;
+}
+
+/* Responsive hero */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 15px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
 /* Sections */
@@ -93,32 +128,13 @@ footer {
   padding: 30px;
   margin-top: 60px;
 }
+
+/* Iframe styling */
 iframe {
   width: 100%;
   border: none;
   border-radius: 12px;
   height: 1200px;
-}
-
-/* ✨ One-Time Shimmer Effect ✨ */
-@keyframes shimmerOnce {
-  0% { background-position: -200%; }
-  100% { background-position: 200%; }
-}
-
-.hover-glimmer {
-  position: relative;
-  display: inline-block;
-  transition: filter 0.3s ease;
-}
-
-.hover-glimmer:hover {
-  background: linear-gradient(120deg, #0072ff, #9b00ff, #ffffff, #0072ff);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmerOnce 1.2s linear 1;
-  filter: brightness(1.15);
 }
 
 /* Fade-in effect */
@@ -130,6 +146,14 @@ iframe {
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hover effect for other elements */
+.hover-glimmer {
+  transition: filter 0.3s ease;
+}
+.hover-glimmer:hover {
+  filter: brightness(1.15);
 }
 </style>
 </head>
